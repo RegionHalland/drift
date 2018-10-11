@@ -3,7 +3,7 @@
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "Drift is a childtheme to Halland.",
-  "homepage": "https://github.com/regionhalland",
+  "homepage": "https://github.com/regionhalland/drift",
   "authors": [
     {
       "name": "David Öhlin",
@@ -13,7 +13,7 @@
   ],
   "keywords": ["wordpress"],
   "support": {
-    "issues": "https://github.com/regionhalland/halland/issues"
+    "issues": "https://github.com/regionhalland/drift/issues"
   },
   "autoload": {
     "psr-4": {
