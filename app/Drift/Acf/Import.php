@@ -1,6 +1,6 @@
 <?php
 
-namespace Drift\Acf;
+namespace App\Drift\Acf;
 
 class Import
 {

@@ -11,10 +11,11 @@
 	</div>
 </div>
 
+@php(var_dump($tist));
+
 <div class="py-6">
 	<div class="container mx-auto px-4">
 		<div class="flex flex-wrap items-stretch -mx-4 pt-4">
-
 			{{-- Table Header--}}
 			<header class="hidden md:flex flex-wrap w-full pb-6 px-4">
 				<div class="w-full md:w-4/12 px-6">

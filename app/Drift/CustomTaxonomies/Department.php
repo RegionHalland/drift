@@ -1,6 +1,6 @@
 <?php
 
-namespace Drift\CustomTaxonomies;
+namespace App\Drift\CustomTaxonomies;
 
 class Department
 {
@@ -21,7 +21,6 @@ class Department
 			'hierarchical' => true,
 			'labels' => $labels,
 			'show_ui' => true,
-			'show_admin_column' => true,
 			'update_count_callback' => '_update_post_term_count',
 			'query_var' => true,
 			'rewrite' => array( 'slug' => 'department' ),

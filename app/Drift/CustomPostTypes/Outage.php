@@ -1,6 +1,6 @@
 <?php
 
-namespace Drift\CustomPostTypes;
+namespace App\Drift\CustomPostTypes;
 
 class Outage
 {

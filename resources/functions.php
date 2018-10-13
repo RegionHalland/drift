@@ -4,21 +4,6 @@
  * Do not edit anything in this file unless you know what you're doing
  */
 
-/**
- * Require the child themes autoloader
- */
-if (file_exists(__DIR__ . '/../vendor/autoload.php')) {
-    require_once __DIR__ . '/../vendor/autoload.php';
-}
-
-/**
- * Use setup-child
- */
-
-if (file_exists(dirname(__DIR__) . '/app/setup-child.php')) {
-    require_once dirname(__DIR__) . '/app/setup-child.php';
-}
-
 
 use Roots\Sage\Config;
 use Roots\Sage\Container;
@@ -106,3 +91,12 @@ Container::getInstance()
             'view' => require dirname(__DIR__).'/config/view.php',
         ]);
     }, true);
+
+
+/**
+ * Use setup-child
+ */
+
+if (file_exists(dirname(__DIR__) . '/app/setup-child.php')) {
+    require_once dirname(__DIR__) . '/app/setup-child.php';
+}
