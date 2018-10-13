@@ -11,11 +11,11 @@
 	</div>
 </div>
 
-@php(var_dump($tist));
-
+@if(isset($outages) && !empty($outages))
 <div class="py-6">
 	<div class="container mx-auto px-4">
 		<div class="flex flex-wrap items-stretch -mx-4 pt-4">
+			
 			{{-- Table Header--}}
 			<header class="hidden md:flex flex-wrap w-full pb-6 px-4">
 				<div class="w-full md:w-4/12 px-6">
@@ -36,150 +36,57 @@
 			</header>
 			{{-- Table Header END --}}
 
+			{{-- Cards Container --}}
 			<div class="w-full px-4">
+				@foreach($outages as $key => $outage)
 				{{-- Card --}}
 				<div class="mb-4">
-					<div class="flex flex-wrap relative items-stretch w-full border py-6 overflow-hidden">
+					<div class="flex flex-wrap relative items-center w-full border py-6 overflow-hidden">
+						@if ($outage['status'] === 'planned')
 						<span aria-hidden class="absolute h-full w-1 bg-orange pin-t pin-l"></span>
-						<div class="w-full md:w-4/12 px-6 mb-3 md:mb-0">
-							<h3 class="mb-1">Driftstörning självservice</h3>
-							<p class="text-sm text-grey-dark">Skapad: 2019/07/19</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Tjänst</p>
-							<p>It/Telefoni</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Start</p>
-							<p>2018/08/10 11:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Beräknat avslut</p>
-							<p>2018/08/09 15:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Status</p>
-							<p class="inline-flex py-1 p-3 rounded-full bg-orange">Planerad</p>
-						</div>
-					</div>
-				</div>
-				{{-- Card END --}}
-
-				{{-- Card --}}
-				<div class="mb-4">
-					<div class="flex flex-wrap relative items-stretch w-full border py-6 overflow-hidden">
-						<span aria-hidden class="absolute h-full w-1 bg-green pin-t pin-l"></span>
-						<div class="w-full md:w-4/12 px-6 mb-3 md:mb-0">
-							<h3 class="mb-1">Driftstörning självservice</h3>
-							<p class="text-sm text-grey-dark">Skapad: 2019/07/19</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Tjänst</p>
-							<p>It/Telefoni</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Start</p>
-							<p>2018/08/10 11:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Beräknat avslut</p>
-							<p>2018/08/09 15:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Status</p>
-							<p class="inline-flex py-1 p-3 rounded-full bg-green text-white">Slutförd</p>
-						</div>
-					</div>
-				</div>
-				{{-- Card END --}}
-
-				{{-- Card --}}
-				<div class="mb-4">
-					<div class="flex flex-wrap relative items-stretch w-full border py-6 overflow-hidden">
-						<span aria-hidden class="absolute h-full w-1 bg-orange pin-t pin-l"></span>
-						<div class="w-full md:w-4/12 px-6 mb-3 md:mb-0">
-							<h3 class="mb-1">Driftstörning självservice</h3>
-							<p class="text-sm text-grey-dark">Skapad: 2019/07/19</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Tjänst</p>
-							<p>It/Telefoni</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Start</p>
-							<p>2018/08/10 11:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Beräknat avslut</p>
-							<p>2018/08/09 15:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Status</p>
-							<p class="inline-flex py-1 p-3 rounded-full bg-orange">Planerad</p>
-						</div>
-					</div>
-				</div>
-				{{-- Card END --}}
-
-				{{-- Card --}}
-				<div class="mb-4">
-					<div class="flex flex-wrap relative items-stretch w-full border py-6 overflow-hidden">
+						@elseif ($outage['status'] === 'started')
 						<span aria-hidden class="absolute h-full w-1 bg-red pin-t pin-l"></span>
-						<div class="w-full md:w-4/12 px-6 mb-3 md:mb-0">
-							<h3 class="mb-1">Driftstörning självservice</h3>
-							<p class="text-sm text-grey-dark">Skapad: 2019/07/19</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Tjänst</p>
-							<p>It/Telefoni</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Start</p>
-							<p>2018/08/10 11:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
-							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Beräknat avslut</p>
-							<p>2018/08/09 15:00</p>
-						</div>
-						<div class="w-full md:w-2/12 px-6 md:mb-0">
-							<p class="text-sm text-grey-dark md:hidden mb-1">Status</p>
-							<p class="inline-flex py-1 p-3 rounded-full bg-red text-white">Pågående</p>
-						</div>
-					</div>
-				</div>
-				{{-- Card END --}}
-
-				{{-- Card --}}
-				<div class="mb-4">
-					<div class="flex flex-wrap relative items-stretch w-full border py-6 overflow-hidden">
+						@elseif ($outage['status'] === 'finished')
 						<span aria-hidden class="absolute h-full w-1 bg-green pin-t pin-l"></span>
+						@endif
 						<div class="w-full md:w-4/12 px-6 mb-3 md:mb-0">
-							<h3 class="mb-1">Driftstörning självservice</h3>
-							<p class="text-sm text-grey-dark">Skapad: 2019/07/19</p>
+							<h3 class="mb-1">{{ $outage['title'] }}</h3>
+							<p class="text-sm text-grey-dark">Skapad: {{ $outage['published'] }}</p>
 						</div>
 						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
 							<p class="text-sm text-grey-dark md:hidden mb-1">Tjänst</p>
-							<p>It/Telefoni</p>
+							@foreach ($outage['department'] as $department)
+							<p>{{ $department }}</p>
+							@endforeach
 						</div>
 						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
 							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Start</p>
-							<p>2018/08/10 11:00</p>
+							<p>{{ $outage['start'] }}</p>
 						</div>
 						<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
 							<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Beräknat avslut</p>
-							<p>2018/08/09 15:00</p>
+							<p>{{ $outage['end'] }}</p>
 						</div>
 						<div class="w-full md:w-2/12 px-6 md:mb-0">
 							<p class="text-sm text-grey-dark md:hidden mb-1">Status</p>
-							<p class="inline-flex py-1 p-3 rounded-full bg-green text-white">Slutförd</p>
+							@if ($outage['status'] === 'planned')
+							<p class="inline-flex py-1 p-3 rounded-full bg-orange">Planerad</p>
+							@elseif ($outage['status'] === 'started')
+							<p class="inline-flex py-1 p-3 rounded-full bg-red text-white">Pågående</p>
+							@elseif ($outage['status'] === 'finished')
+							<p class="inline-flex py-1 p-3 rounded-full bg-green">Avslutad</p>
+							@endif
 						</div>
 					</div>
 				</div>
 				{{-- Card END --}}
+				@endforeach
 			</div>
+			{{-- Cards Container END --}}
 		</div>
 	</div>
 </div>
+@endif
 
 <div class="py-6">
 	<div class="container mx-auto px-4">
