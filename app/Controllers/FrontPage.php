@@ -1,9 +1,8 @@
 <?php
 
-namespace App;
+namespace App\Controllers;
 
 use Sober\Controller\Controller;
-
 
 class FrontPage extends Controller
 {
@@ -12,7 +11,7 @@ class FrontPage extends Controller
 
 	public function tist() 
 	{
-		return 'tittis';
+		return 'from the child theme';
 	}
 
 }
