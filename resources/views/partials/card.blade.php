@@ -35,7 +35,7 @@
 			@elseif ($status->slug === 'started')
 			<p class="inline-flex py-1 p-3 rounded-full bg-red text-white">Pågående</p>
 			@elseif ($status->slug === 'finished')
-			<p class="inline-flex py-1 p-3 rounded-full bg-green">Avslutad</p>
+			<p class="inline-flex py-1 p-3 rounded-full bg-green text-white">Avslutad</p>
 			@endif
 		</div>
 	</div>
