@@ -21,3 +21,4 @@ new \App\Drift\CustomPostTypes\Outage();
 
 // Custom Taxonomies
 new \App\Drift\CustomTaxonomies\Department();
+new \App\Drift\CustomTaxonomies\Status();
