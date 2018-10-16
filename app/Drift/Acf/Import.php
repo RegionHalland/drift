@@ -12,7 +12,7 @@ class Import
 				$acfExportManager->setTextdomain('halland');
 				$acfExportManager->setExportFolder(__DIR__);
 				$acfExportManager->autoExport(array(
-					// Add ACF-fields here
+					'outage' => 'group_5bbf31087bfe4'
 				));
 				$acfExportManager->import();
 			}
