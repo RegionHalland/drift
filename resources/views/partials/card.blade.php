@@ -26,7 +26,7 @@
 		</div>
 		<div class="w-full md:w-2/12 px-6 mb-3 md:mb-0">
 			<p class="inline-block text-sm text-grey-dark md:hidden mb-1">Beräknat avslut</p>
-			<p>{{ the_field('end') }}</p>
+			<p>{{ get_field('end') ? the_field('end') : 'Okänt' }}</p>
 		</div>
 		<div class="w-full md:w-2/12 px-6 md:mb-0">
 			<p class="text-sm text-grey-dark md:hidden mb-1">Status</p>
